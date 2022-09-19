@@ -2,27 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NoiseMapGeneration : MonoBehaviour
+namespace MapGeneration
 {
-    public float[,] GenerateNoisemap(int mapDepth, int mapWidth, float scale, float offsetX, float offsetZ)
+    public class NoiseMapGeneration : MonoBehaviour
     {
-        float[,] noiseMap = new float[mapDepth, mapWidth];
-
-        for(int zIndex = 0; zIndex < mapDepth; zIndex++)
+        public float[,] GenerateNoiseMap(int mapDepth, int mapWidth, float scale)
         {
-            for(int xIndex = 0;xIndex < mapWidth; xIndex++)
+            float[,] noiseMap = new float[mapDepth, mapWidth];
+
+            for (int zIndex = 0; zIndex < mapDepth; zIndex++)
             {
-                float sampleX = (xIndex + offsetX) / scale;
-                float sampleZ = (zIndex + offsetZ) / scale;
+                for (int xIndex = 0; xIndex < mapWidth; xIndex++)
+                {
+                    float sampleX = xIndex / scale;
+                    float sampleZ = zIndex / scale;
 
-                float noise = Mathf.PerlinNoise(sampleX,sampleZ);
+                    float noise = Mathf.PerlinNoise(sampleX, sampleZ);
 
-                noiseMap[zIndex, xIndex] = noise;
+                    noiseMap[zIndex, xIndex] = noise;
+                }
             }
+
+            return noiseMap;
         }
-        
-        return noiseMap;
     }
-    
-        
 }

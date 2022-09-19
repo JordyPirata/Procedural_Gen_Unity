@@ -10,10 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2172917078435900373}
   - component: {fileID: 8487655161195472880}
-  - component: {fileID: 6635881522613973443}
+  - component: {fileID: 7045794038834489002}
   - component: {fileID: 7751334099109939311}
+  - component: {fileID: 7928477490641379280}
+  - component: {fileID: 6878515426385400483}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Level Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,7 +44,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2865716167328094534}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!64 &6635881522613973443
+--- !u!64 &7045794038834489002
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,3 +100,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7928477490641379280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2865716167328094534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c4e9c012eb6974e81e6e589366ecce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6878515426385400483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2865716167328094534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c67d889f8ba51d24d904b7dc78e12676, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  terrainTypes:
+  - name: water
+    height: 0.3
+    color: {r: 0.15699539, g: 0.44193727, b: 0.6792453, a: 1}
+  - name: beach
+    height: 0.32
+    color: {r: 0.7830189, g: 0.6410644, b: 0.41736382, a: 1}
+  - name: grass
+    height: 0.7
+    color: {r: 0.043120332, g: 0.5377358, b: 0.07652167, a: 1}
+  - name: mountain
+    height: 0.95
+    color: {r: 0.2735849, g: 0.21381886, b: 0.2000267, a: 1}
+  - name: snowy
+    height: 1
+    color: {r: 0.9150943, g: 0.8707936, b: 0.85898006, a: 1}
+  noiseMapGeneration: {fileID: 7928477490641379280}
+  titleRenderer: {fileID: 7751334099109939311}
+  meshFilter: {fileID: 8487655161195472880}
+  meshCollider: {fileID: 7045794038834489002}
+  mapScale: 3
