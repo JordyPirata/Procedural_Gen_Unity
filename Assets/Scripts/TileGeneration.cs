@@ -16,12 +16,6 @@ namespace MapGeneration
     public class TileGeneration : MonoBehaviour
     {
         [SerializeField]
-        private TerrainType[] terrainTypes;
-
-        [SerializeField]
-        NoiseMapGeneration noiseMapGeneration;
-
-        [SerializeField]
         private MeshRenderer titleRenderer;
 
         [SerializeField]
@@ -29,14 +23,22 @@ namespace MapGeneration
 
         [SerializeField]
         private MeshCollider meshCollider;
+  
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                GenerateTitle();
+            }
+        }
+        [SerializeField]
+        NoiseMapGeneration noiseMapGeneration;
 
         [SerializeField]
         private float mapScale;
 
-        void Start()
-        {
-            GenerateTitle();
-        }
+        [SerializeField]
+        private Wave[] waves;
 
         void GenerateTitle()
         {
@@ -44,11 +46,18 @@ namespace MapGeneration
 
             int titleDepth = (int)Mathf.Sqrt(meshVertices.Length);
             int titleWidth = titleDepth;
-            float[,] heightMap = this.noiseMapGeneration.GenerateNoiseMap(titleDepth, titleWidth, this.mapScale);
+
+            float offsetX = -this.gameObject.transform.position.x;
+            float offsetZ = -this.gameObject.transform.position.z;
+
+            float[,] heightMap = this.noiseMapGeneration.GenerateNoiseMap(titleDepth, titleWidth, this.mapScale, offsetX, offsetZ, waves);
 
             Texture2D titleTexture = BuildTexture(heightMap);
             this.titleRenderer.material.mainTexture = titleTexture;
+
+            UpdateMeshVertices(heightMap);
         }
+
         private Texture2D BuildTexture(float[,] heightMap)
         {
             int titleDepth = heightMap.GetLength(0);
@@ -76,6 +85,8 @@ namespace MapGeneration
             return tileTexture;
         }
 
+        [SerializeField]
+        private TerrainType[] terrainTypes;
         TerrainType ChooseTerrainType(float height)
         {
             foreach (TerrainType terrainType in terrainTypes)
@@ -87,6 +98,37 @@ namespace MapGeneration
 
             }
             return terrainTypes[terrainTypes.Length - 1];
+        }
+
+        [SerializeField]
+        private float heightMultiplayer;
+        [SerializeField]
+        private AnimationCurve heightCurve;
+        private void UpdateMeshVertices(float[,] heightMap)
+        {
+            int titleDepth = heightMap.GetLength(0);
+            int titleWidth = heightMap.GetLength(1);
+
+            Vector3[] meshVertices = this.meshFilter.mesh.vertices;
+
+            int vertexIndex = 0;
+            for (int zIndex = 0; zIndex < titleDepth; zIndex++)
+            {
+                for (int xIndex = 0; xIndex < titleWidth; xIndex++)
+                {
+                    float height = heightMap[zIndex,xIndex];
+
+                    Vector3 vertex = meshVertices[vertexIndex];
+                    meshVertices[vertexIndex] = new Vector3(vertex.x, heightCurve.Evaluate(height) * heightMultiplayer, vertex.z);
+
+                    vertexIndex++;
+                }
+            }
+            this.meshFilter.mesh.vertices = meshVertices;
+            this.meshFilter.mesh.RecalculateBounds();
+            this.meshFilter.mesh.RecalculateNormals();
+
+            this.meshCollider.sharedMesh = this.meshFilter.mesh;
         }
     }
 }

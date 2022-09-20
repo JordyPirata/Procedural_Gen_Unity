@@ -1,0 +1,287 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TileGeneration
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: c67d889f8ba51d24d904b7dc78e12676, type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: titleRenderer
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: meshFilter
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: meshCollider
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: noiseMapGeneration
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: terrainTypes.Array.size
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: terrainTypes.Array.data[0].name
+    value: water
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: terrainTypes.Array.data[0].height
+    value: 0.3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: terrainTypes.Array.data[0].color.r
+    value: 0.15699539
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: terrainTypes.Array.data[0].color.g
+    value: 0.44193727
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: terrainTypes.Array.data[0].color.b
+    value: 0.6792453
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: terrainTypes.Array.data[0].color.a
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: terrainTypes.Array.data[1].name
+    value: beach
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: terrainTypes.Array.data[1].height
+    value: 0.32
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: terrainTypes.Array.data[1].color.r
+    value: 0.7830189
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: terrainTypes.Array.data[1].color.g
+    value: 0.6410644
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: terrainTypes.Array.data[1].color.b
+    value: 0.41736382
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: terrainTypes.Array.data[1].color.a
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: terrainTypes.Array.data[2].name
+    value: grass
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: terrainTypes.Array.data[2].height
+    value: 0.56
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: terrainTypes.Array.data[2].color.r
+    value: 0.043120332
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: terrainTypes.Array.data[2].color.g
+    value: 0.5377358
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: terrainTypes.Array.data[2].color.b
+    value: 0.07652167
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: terrainTypes.Array.data[2].color.a
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: terrainTypes.Array.data[3].name
+    value: mountain
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: terrainTypes.Array.data[3].height
+    value: 0.8
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: terrainTypes.Array.data[3].color.r
+    value: 0.2735849
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: terrainTypes.Array.data[3].color.g
+    value: 0.21381886
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: terrainTypes.Array.data[3].color.b
+    value: 0.2000267
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: terrainTypes.Array.data[3].color.a
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: terrainTypes.Array.data[4].name
+    value: snowy
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: terrainTypes.Array.data[4].height
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: terrainTypes.Array.data[4].color.r
+    value: 0.9150943
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: terrainTypes.Array.data[4].color.g
+    value: 0.8707936
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: terrainTypes.Array.data[4].color.b
+    value: 0.85898006
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: terrainTypes.Array.data[4].color.a
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: mapScale
+    value: 5.46
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: heightMultiplayer
+    value: 7.19
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: heightCurve.m_Curve.Array.size
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: heightCurve.m_Curve.Array.data[0].time
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: heightCurve.m_Curve.Array.data[0].value
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: heightCurve.m_Curve.Array.data[0].inSlope
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: heightCurve.m_Curve.Array.data[0].outSlope
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: heightCurve.m_Curve.Array.data[0].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: heightCurve.m_Curve.Array.data[0].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: heightCurve.m_Curve.Array.data[0].inWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: heightCurve.m_Curve.Array.data[0].outWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: heightCurve.m_Curve.Array.data[1].time
+    value: 0.30204877
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: heightCurve.m_Curve.Array.data[1].value
+    value: 0.01277753
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: heightCurve.m_Curve.Array.data[1].inSlope
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: heightCurve.m_Curve.Array.data[1].outSlope
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: heightCurve.m_Curve.Array.data[1].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: heightCurve.m_Curve.Array.data[1].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: heightCurve.m_Curve.Array.data[1].inWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: heightCurve.m_Curve.Array.data[1].outWeight
+    value: 0.07758207
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: heightCurve.m_Curve.Array.data[2].time
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: heightCurve.m_Curve.Array.data[2].value
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: heightCurve.m_Curve.Array.data[2].inSlope
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: heightCurve.m_Curve.Array.data[2].outSlope
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: heightCurve.m_Curve.Array.data[2].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: heightCurve.m_Curve.Array.data[2].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: heightCurve.m_Curve.Array.data[2].inWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: heightCurve.m_Curve.Array.data[2].outWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: heightCurve.m_PreInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: heightCurve.m_PostInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: heightCurve.m_RotationOrder
+    value: 4
+    objectReference: {fileID: 0}
+  m_ExcludedProperties: []

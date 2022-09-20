@@ -124,6 +124,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c67d889f8ba51d24d904b7dc78e12676, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  titleRenderer: {fileID: 7751334099109939311}
+  meshFilter: {fileID: 8487655161195472880}
+  meshCollider: {fileID: 7045794038834489002}
+  noiseMapGeneration: {fileID: 7928477490641379280}
   terrainTypes:
   - name: water
     height: 0.3
@@ -132,16 +136,46 @@ MonoBehaviour:
     height: 0.32
     color: {r: 0.7830189, g: 0.6410644, b: 0.41736382, a: 1}
   - name: grass
-    height: 0.7
+    height: 0.56
     color: {r: 0.043120332, g: 0.5377358, b: 0.07652167, a: 1}
   - name: mountain
-    height: 0.95
+    height: 0.8
     color: {r: 0.2735849, g: 0.21381886, b: 0.2000267, a: 1}
   - name: snowy
     height: 1
     color: {r: 0.9150943, g: 0.8707936, b: 0.85898006, a: 1}
-  noiseMapGeneration: {fileID: 7928477490641379280}
-  titleRenderer: {fileID: 7751334099109939311}
-  meshFilter: {fileID: 8487655161195472880}
-  meshCollider: {fileID: 7045794038834489002}
-  mapScale: 3
+  mapScale: 5.46
+  heightMultiplayer: 7.19
+  heightCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.30204877
+      value: 0.01277753
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.07758207
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
