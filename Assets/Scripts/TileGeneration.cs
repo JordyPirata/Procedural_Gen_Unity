@@ -37,9 +37,6 @@ namespace MapGeneration
         [SerializeField]
         private float mapScale;
 
-        [SerializeField]
-        private Wave[] waves;
-
         void GenerateTitle()
         {
             Vector3[] meshVertices = this.meshFilter.mesh.vertices;
@@ -50,7 +47,7 @@ namespace MapGeneration
             float offsetX = -this.gameObject.transform.position.x;
             float offsetZ = -this.gameObject.transform.position.z;
 
-            float[,] heightMap = this.noiseMapGeneration.GenerateNoiseMap(titleDepth, titleWidth, this.mapScale, offsetX, offsetZ, waves);
+            float[,] heightMap = this.noiseMapGeneration.GenerateNoiseMap(titleDepth, titleWidth, this.mapScale);
 
             Texture2D titleTexture = BuildTexture(heightMap);
             this.titleRenderer.material.mainTexture = titleTexture;
