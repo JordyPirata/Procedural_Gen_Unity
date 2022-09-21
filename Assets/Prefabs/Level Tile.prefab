@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2172917078435900373}
   - component: {fileID: 8487655161195472880}
-  - component: {fileID: 7045794038834489002}
   - component: {fileID: 7751334099109939311}
   - component: {fileID: 7928477490641379280}
   - component: {fileID: 6878515426385400483}
@@ -43,20 +42,6 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2865716167328094534}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!64 &7045794038834489002
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2865716167328094534}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &7751334099109939311
 MeshRenderer:
@@ -126,8 +111,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   titleRenderer: {fileID: 7751334099109939311}
   meshFilter: {fileID: 8487655161195472880}
-  meshCollider: {fileID: 7045794038834489002}
+  meshCollider: {fileID: 0}
   noiseMapGeneration: {fileID: 7928477490641379280}
+  mapScale: 5.46
   terrainTypes:
   - name: water
     height: 0.3
@@ -144,7 +130,6 @@ MonoBehaviour:
   - name: snowy
     height: 1
     color: {r: 0.9150943, g: 0.8707936, b: 0.85898006, a: 1}
-  mapScale: 5.46
   heightMultiplayer: 7.19
   heightCurve:
     serializedVersion: 2

@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace MapGeneration
 {
-    public class NoiseMapGeneration : MonoBehaviour
+    public static class NoiseMapGeneration
     {
-        public float[,] GenerateNoiseMap(int mapDepth, int mapWidth, float scale)
+        public static float[,] GenerateNoiseMap(int mapDepth, int mapWidth, float scale)
         {
             float[,] noiseMap = new float[mapDepth, mapWidth];
 

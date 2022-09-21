@@ -356,5 +356,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level Tile
       objectReference: {fileID: 0}
+    - target: {fileID: 6878515426385400483, guid: 11ccdebfbb444704794ee4ccafcba15a, type: 3}
+      propertyPath: meshCollider
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11ccdebfbb444704794ee4ccafcba15a, type: 3}
