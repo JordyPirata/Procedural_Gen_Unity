@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2172917078435900373}
   - component: {fileID: 8487655161195472880}
-  - component: {fileID: 7045794038834489002}
   - component: {fileID: 7751334099109939311}
-  - component: {fileID: 7928477490641379280}
-  - component: {fileID: 6878515426385400483}
+  - component: {fileID: 4167324200654352342}
+  - component: {fileID: 4408943498255870134}
   m_Layer: 0
   m_Name: Level Tile
   m_TagString: Untagged
@@ -30,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2865716167328094534}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 100, y: 1, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -43,20 +42,6 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2865716167328094534}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!64 &7045794038834489002
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2865716167328094534}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &7751334099109939311
 MeshRenderer:
@@ -78,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d5042290f4e3ae14eba26e433e4a44e3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -100,7 +85,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7928477490641379280
+--- !u!114 &4167324200654352342
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,10 +94,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2865716167328094534}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15c4e9c012eb6974e81e6e589366ecce, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c5abc50a3240b644a6a204a423cdde5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6878515426385400483
+  textureRender: {fileID: 7751334099109939311}
+--- !u!114 &4408943498255870134
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,61 +107,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2865716167328094534}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c67d889f8ba51d24d904b7dc78e12676, type: 3}
+  m_Script: {fileID: 11500000, guid: 3fd8cb4c1176f6343bfed35e2357fc05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  titleRenderer: {fileID: 7751334099109939311}
-  meshFilter: {fileID: 8487655161195472880}
-  meshCollider: {fileID: 7045794038834489002}
-  noiseMapGeneration: {fileID: 7928477490641379280}
-  terrainTypes:
-  - name: water
-    height: 0.3
-    color: {r: 0.15699539, g: 0.44193727, b: 0.6792453, a: 1}
-  - name: beach
-    height: 0.32
-    color: {r: 0.7830189, g: 0.6410644, b: 0.41736382, a: 1}
-  - name: grass
-    height: 0.56
-    color: {r: 0.043120332, g: 0.5377358, b: 0.07652167, a: 1}
-  - name: mountain
-    height: 0.8
-    color: {r: 0.2735849, g: 0.21381886, b: 0.2000267, a: 1}
-  - name: snowy
-    height: 1
-    color: {r: 0.9150943, g: 0.8707936, b: 0.85898006, a: 1}
-  mapScale: 5.46
-  heightMultiplayer: 7.19
-  heightCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.30204877
-      value: 0.01277753
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.07758207
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  mapWidth: 100
+  mapHeight: 100
+  noiseScale: 3
