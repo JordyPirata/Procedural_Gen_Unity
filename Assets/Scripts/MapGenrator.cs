@@ -1,13 +1,17 @@
-﻿namespace MapGeneration
+﻿using UnityEngine;
+namespace MapGeneration
 {
-    public class MapGenrator
+    public class MapGenrator : MonoBehaviour
     {
-        public int mapDepth;
+        public int mapHeight;
         public int mapWidth;
-        public int scale;
+        public int noiseScale;
         public void GenerateMap()
-        {
-            float[,] noiseMap = NoiseMapGeneration.GenerateNoiseMap(mapDepth, mapWidth, scale);
+        { 
+            float[,] noiseMap = NoiseMapGeneration.GenerateNoiseMap(mapWidth, mapHeight, noiseScale);
+
+            MapDisplay display = FindObjectOfType<MapDisplay>();
+            display.DrawNoiseMap(noiseMap);
 
         }
     }
