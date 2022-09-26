@@ -22,6 +22,8 @@ namespace MapGeneration
             }
             texture.SetPixels(colorMap);
             texture.Apply();
+
+            textureRender.sharedMaterial.mainTexture = texture;
             textureRender.transform.localScale = new Vector3(width,1, heigth);
         }
     }

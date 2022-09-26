@@ -1,4 +1,4 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,13 +6,17 @@ namespace MapGeneration
 {
     public static class NoiseMapGeneration
     {
-        public static float[,] GenerateNoiseMap(int mapDepth, int mapWidth, float scale)
+        public static float[,] GenerateNoiseMap(int mapWidth, int mapHeight, float scale)
         {
-            float[,] noiseMap = new float[mapDepth, mapWidth];
-
-            for (int zIndex = 0; zIndex < mapDepth; zIndex++)
+            float[,] noiseMap = new float[mapWidth, mapHeight];
+            
+            if (scale <= 0)
             {
-                for (int xIndex = 0; xIndex < mapWidth; xIndex++)
+                throw new Exception("Scale cannot be negative");
+            }
+            for (int zIndex = 0; zIndex < mapWidth; zIndex++)
+            {
+                for (int xIndex = 0; xIndex < mapHeight; xIndex++)
                 {
                     float sampleX = xIndex / scale;
                     float sampleZ = zIndex / scale;
