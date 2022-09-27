@@ -314,11 +314,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2172917078435900373, guid: 11ccdebfbb444704794ee4ccafcba15a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2172917078435900373, guid: 11ccdebfbb444704794ee4ccafcba15a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 10
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2172917078435900373, guid: 11ccdebfbb444704794ee4ccafcba15a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -365,16 +365,32 @@ PrefabInstance:
       value: MapGenerator
       objectReference: {fileID: 0}
     - target: {fileID: 4408943498255870134, guid: 11ccdebfbb444704794ee4ccafcba15a, type: 3}
+      propertyPath: octaves
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4408943498255870134, guid: 11ccdebfbb444704794ee4ccafcba15a, type: 3}
       propertyPath: mapWidth
-      value: 10
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4408943498255870134, guid: 11ccdebfbb444704794ee4ccafcba15a, type: 3}
       propertyPath: mapHeight
-      value: 10
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4408943498255870134, guid: 11ccdebfbb444704794ee4ccafcba15a, type: 3}
+      propertyPath: AutoUpdate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4408943498255870134, guid: 11ccdebfbb444704794ee4ccafcba15a, type: 3}
+      propertyPath: lacunarity
+      value: 3.16
       objectReference: {fileID: 0}
     - target: {fileID: 4408943498255870134, guid: 11ccdebfbb444704794ee4ccafcba15a, type: 3}
       propertyPath: noiseScale
-      value: 2
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4408943498255870134, guid: 11ccdebfbb444704794ee4ccafcba15a, type: 3}
+      propertyPath: persistance
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11ccdebfbb444704794ee4ccafcba15a, type: 3}
