@@ -293,8 +293,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -65.63018, y: 1109.4297, z: 33.12498}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -314,11 +314,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2172917078435900373, guid: 11ccdebfbb444704794ee4ccafcba15a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2172917078435900373, guid: 11ccdebfbb444704794ee4ccafcba15a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 10
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2172917078435900373, guid: 11ccdebfbb444704794ee4ccafcba15a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -365,16 +365,44 @@ PrefabInstance:
       value: MapGenerator
       objectReference: {fileID: 0}
     - target: {fileID: 4408943498255870134, guid: 11ccdebfbb444704794ee4ccafcba15a, type: 3}
-      propertyPath: mapWidth
+      propertyPath: seed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4408943498255870134, guid: 11ccdebfbb444704794ee4ccafcba15a, type: 3}
+      propertyPath: octaves
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4408943498255870134, guid: 11ccdebfbb444704794ee4ccafcba15a, type: 3}
+      propertyPath: mapWidth
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4408943498255870134, guid: 11ccdebfbb444704794ee4ccafcba15a, type: 3}
+      propertyPath: offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4408943498255870134, guid: 11ccdebfbb444704794ee4ccafcba15a, type: 3}
+      propertyPath: offset.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4408943498255870134, guid: 11ccdebfbb444704794ee4ccafcba15a, type: 3}
       propertyPath: mapHeight
-      value: 10
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4408943498255870134, guid: 11ccdebfbb444704794ee4ccafcba15a, type: 3}
+      propertyPath: AutoUpdate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4408943498255870134, guid: 11ccdebfbb444704794ee4ccafcba15a, type: 3}
+      propertyPath: lacunarity
+      value: 3.1
       objectReference: {fileID: 0}
     - target: {fileID: 4408943498255870134, guid: 11ccdebfbb444704794ee4ccafcba15a, type: 3}
       propertyPath: noiseScale
-      value: 2
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4408943498255870134, guid: 11ccdebfbb444704794ee4ccafcba15a, type: 3}
+      propertyPath: persistance
+      value: 0.318
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11ccdebfbb444704794ee4ccafcba15a, type: 3}

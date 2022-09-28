@@ -12,12 +12,13 @@ namespace MapGeneration
             int heigth = noise.GetLength(1);
 
             Texture2D texture = new Texture2D(width, heigth);
+
             Color[] colorMap = new Color[width * heigth];
             for (int y = 0; y < heigth; y++)
             {
                 for (int x = 0; x < width; x++)
                 {
-                    colorMap[y * heigth + x] = Color.Lerp(Color.black, Color.white, noise[x, y]);
+                    colorMap[y * width + x] = Color.Lerp(Color.black, Color.white, noise[x, y]);
                 }
             }
             texture.SetPixels(colorMap);
