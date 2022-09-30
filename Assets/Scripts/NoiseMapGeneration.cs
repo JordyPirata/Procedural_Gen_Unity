@@ -11,18 +11,17 @@ namespace MapGeneration
             float[,] noiseMap = new float[mapWidth, mapHeight];
             Random prng = new Random(seed);
             Vector2[] octaveOffsets = new Vector2[octaves];
+
             for (int i = 0; i < octaves; i++)
             {
                 float offsetY = prng.Next(-100000,100000) + offset.x;
                 float offsetX = prng.Next(-100000,100000) + offset.y;
                 octaveOffsets[i] = new Vector2(offsetX, offsetY);
             }
-            
             if (scale <= 0)
             {
                 throw new Exception("Scale cannot be negative");
             }
-
             float maxNoiseHeight = float.MinValue;
             float minNoiseHeight = float.MaxValue;
 

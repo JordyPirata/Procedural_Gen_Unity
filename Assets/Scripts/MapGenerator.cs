@@ -5,7 +5,7 @@ namespace MapGeneration
     public class TerrainType
     {
         public string name;
-        public float height;
+        public float heigth;
         public Color color;
     }
     public class MapGenerator : MonoBehaviour
@@ -35,12 +35,12 @@ namespace MapGeneration
             float[,] noiseMap = NoiseMapGeneration.GenerateNoiseMap(mapWidth, mapHeight, seed, noiseScale, octaves, persistance, lacunarity, offset);
 
             Color[] colorMap = new Color[mapWidth * mapHeight];
-            for (int yIndex = 0; yIndex < mapWidth; yIndex++)
+            for (int yIndex = 0; yIndex < mapHeight; yIndex++)
             {
                 for (int xIndex = 0; xIndex < mapWidth; xIndex++)
                 {
-                    int colorIndex = yIndex * mapHeight + xIndex;
-                    float height = noiseMap[yIndex, xIndex];
+                    int colorIndex = yIndex * mapWidth + xIndex;
+                    float height = noiseMap[xIndex, yIndex];
 
                     TerrainType terrainType = ChooseTerrainType(height);
                     colorMap[colorIndex] = terrainType.color;
@@ -57,11 +57,11 @@ namespace MapGeneration
             }
         }
 
-        TerrainType ChooseTerrainType(float height)
+        TerrainType ChooseTerrainType(float heigth)
         {
             foreach (TerrainType terrainType in terrainTypes)
             {
-                if (height > terrainType.height)
+                if (heigth > terrainType.heigth)
                 {
                     return terrainType;
                 }
