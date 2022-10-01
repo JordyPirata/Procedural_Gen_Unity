@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4167324200654352342}
   - component: {fileID: 4408943498255870134}
   m_Layer: 0
-  m_Name: Level Tile
+  m_Name: MapGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
