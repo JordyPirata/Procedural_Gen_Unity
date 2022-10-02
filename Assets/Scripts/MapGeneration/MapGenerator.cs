@@ -11,7 +11,7 @@ namespace MapGeneration
     }
     public class MapGenerator : MonoBehaviour
     {
-        public enum DrawMode {NoiseMap, ColorMap}
+        public enum DrawMode {NoiseMap, ColorMap, Mesh}
         public DrawMode drawMode;
 
         public int mapWidth;
@@ -55,6 +55,10 @@ namespace MapGeneration
             else if (drawMode == DrawMode.ColorMap)
             {
                 display.DrawTexture(TextureGenerator.TextureFromColorMap(colorMap, mapWidth, mapHeight));
+            }
+            else if (drawMode == DrawMode.Mesh)
+            {
+                display.DrawMesh(MeshGenerator.GenerateTerrainMesh(noiseMap),TextureGenerator.TextureFromColorMap(colorMap,mapWidth,mapHeight));
             }
         }
 
