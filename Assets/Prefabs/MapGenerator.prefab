@@ -60,18 +60,88 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fd8cb4c1176f6343bfed35e2357fc05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drawMode: 1
-  mapWidth: 350
-  mapHeight: 350
+  drawMode: 2
+  mapWidth: 200
+  mapHeight: 200
   noiseScale: 900
-  octaves: 9
-  persistance: 0.65
-  lacunarity: 1.9
-  seed: 19
-  offset: {x: 0.23, y: 0}
+  octaves: 8
+  persistance: 0.6
+  lacunarity: 2
+  seed: 23
+  offset: {x: 0, y: 0}
+  meshHeightMultiplayer: 60
+  meshHeightCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.39755577
+      value: 0.0049138875
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.5375877
+    - serializedVersion: 3
+      time: 0.68863386
+      value: 0.0510111
+      inSlope: 0.46489403
+      outSlope: 1.7944285
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.31616226
+      outWeight: 1
+    - serializedVersion: 3
+      time: 0.76267374
+      value: 0.17419547
+      inSlope: 1.7086812
+      outSlope: 1.7086812
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.28240097
+      outWeight: 0.7537144
+    - serializedVersion: 3
+      time: 0.8397588
+      value: 0.3725235
+      inSlope: 0.5265069
+      outSlope: 0.07862591
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0.92536134
+    - serializedVersion: 3
+      time: 0.9216592
+      value: 0.64791274
+      inSlope: 1.1760905
+      outSlope: -0.6892643
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0.9754544
+    - serializedVersion: 3
+      time: 0.9980955
+      value: 0.9379779
+      inSlope: 1.3681813
+      outSlope: 1.3681813
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   terrainTypes:
   - name: Snow
-    heigth: 0.9
+    heigth: 0.95
     color: {r: 1, g: 1, b: 1, a: 0}
   - name: highMountain
     heigth: 0.8
@@ -83,13 +153,13 @@ MonoBehaviour:
     heigth: 0.5
     color: {r: 0.20828274, g: 0.5754717, b: 0.12215203, a: 0}
   - name: forest
-    heigth: 0.35
+    heigth: 0.45
     color: {r: 0.32705262, g: 0.6509434, b: 0.18115878, a: 0}
   - name: sand
-    heigth: 0.32
+    heigth: 0.42
     color: {r: 0.8962264, g: 0.8962264, b: 0.5030705, a: 0}
   - name: water
-    heigth: 0.21
+    heigth: 0.3
     color: {r: 0.08966714, g: 0.47883096, b: 0.6132076, a: 0}
   - name: deepWater
     heigth: 0
