@@ -4,7 +4,7 @@ namespace MapGeneration
 {
     public static class MeshGenerator
     {
-        public static MeshData GenerateTerrainMesh(float[,] heigthMap)
+        public static MeshData GenerateTerrainMesh(float[,] heigthMap, float heigthMultiplier)
         {
             int width = heigthMap.GetLength(0);
             int heigth = heigthMap.GetLength(1);
@@ -18,7 +18,7 @@ namespace MapGeneration
             {
                 for (int x = 0; x < width; x++)
                 {
-                    meshData.vertices[vertexIndex] = new Vector3(topLeftX + x, heigthMap[x,y], topLeftZ - y);
+                    meshData.vertices[vertexIndex] = new Vector3(topLeftX + x, heigthMap[x,y] * heigthMultiplier, topLeftZ - y);
                     meshData.uvs[vertexIndex] = new Vector2(x / (float)width, y / (float)heigth);
 
                     if (x < width -1 && y < heigth -1)

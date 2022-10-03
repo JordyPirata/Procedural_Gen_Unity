@@ -26,6 +26,8 @@ namespace MapGeneration
         public int seed;
         public Vector2 offset;
 
+        public float meshHeightMultiplayer;
+
         [SerializeField]
         private TerrainType[] terrainTypes;
 
@@ -58,7 +60,7 @@ namespace MapGeneration
             }
             else if (drawMode == DrawMode.Mesh)
             {
-                display.DrawMesh(MeshGenerator.GenerateTerrainMesh(noiseMap),TextureGenerator.TextureFromColorMap(colorMap,mapWidth,mapHeight));
+                display.DrawMesh(MeshGenerator.GenerateTerrainMesh(noiseMap, meshHeightMultiplayer),TextureGenerator.TextureFromColorMap(colorMap,mapWidth,mapHeight));
             }
         }
 
