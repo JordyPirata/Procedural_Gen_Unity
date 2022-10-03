@@ -14,7 +14,7 @@ namespace MapGeneration
         public enum DrawMode {NoiseMap, ColorMap, Mesh}
         public DrawMode drawMode;
 
-        const int mapChunkSize = 241;
+        public const int mapChunkSize = 241;
         [Range(0, 6)]
         public int levelOfDetail;
         public float noiseScale;

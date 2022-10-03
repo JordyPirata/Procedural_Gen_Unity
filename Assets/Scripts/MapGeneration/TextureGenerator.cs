@@ -29,7 +29,7 @@ namespace MapGeneration
                     colorMap[y * width + x] = Color.Lerp(Color.black, Color.white, noise[x, y]);
                 }
             }
-            return TextureFromColorMap(colorMap,width,heigth);
+            return TextureFromColorMap(colorMap, width, heigth);
         }
     }
 }
