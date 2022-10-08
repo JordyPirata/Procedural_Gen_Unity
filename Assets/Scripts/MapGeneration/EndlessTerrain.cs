@@ -14,7 +14,7 @@ namespace MapGeneration
 
         Dictionary<Vector2, TerrainChunk> terrainChunkDiccionary = new Dictionary<Vector2, TerrainChunk>();
         List<TerrainChunk> terrainChunksVisibleLastUpdate = new List<TerrainChunk>();
-
+        
         void Start()
         {
             chunkSize = MapGenerator.mapChunkSize - 1;
@@ -28,6 +28,13 @@ namespace MapGeneration
         }
         void UpdateVisibleChunks()
         {
+
+            for (int i = 0; i < terrainChunksVisibleLastUpdate.Count; i++)
+            {
+                terrainChunksVisibleLastUpdate[i].SetVisible(false);
+            }
+            terrainChunksVisibleLastUpdate.Clear();
+
             int currentChunkCoordX = Mathf.RoundToInt(viwerPosition.x / chunkSize);
             int currentChunkCoordY = Mathf.RoundToInt(viwerPosition.y / chunkSize);
 
@@ -40,6 +47,11 @@ namespace MapGeneration
                     if (terrainChunkDiccionary.ContainsKey(viewedChunkCoord))
                     {
                         terrainChunkDiccionary[viewedChunkCoord].UpdateTerrainChunk();
+
+                        if (terrainChunkDiccionary[viewedChunkCoord].IsVisible())
+                        {
+                            terrainChunksVisibleLastUpdate.Add(terrainChunkDiccionary[viewedChunkCoord]);
+                        }
                     }
                     else
                     {
@@ -73,6 +85,10 @@ namespace MapGeneration
             public void SetVisible(bool visible)
             {
                 meshObject.SetActive(visible);
+            }
+            public bool IsVisible()
+            {
+                return meshObject.activeSelf;
             }
         }
     }
