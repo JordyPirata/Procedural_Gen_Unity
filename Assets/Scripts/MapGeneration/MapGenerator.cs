@@ -34,8 +34,26 @@ namespace MapGeneration
         private TerrainType[] terrainTypes;
 
         public bool AutoUpdate;
+        public void DrawMapInEditor()
+        {
+            MapData mapData = GenerateMapData();
 
-        public void GenerateMap() 
+            MapDisplay display = FindObjectOfType<MapDisplay>();
+            if (drawMode == DrawMode.NoiseMap)
+            {
+                display.DrawTexture(TextureGenerator.TextureFromHeightMap(mapData.heightMap));
+            }
+            else if (drawMode == DrawMode.ColorMap)
+            {
+                display.DrawTexture(TextureGenerator.TextureFromColorMap(mapData.coulorMap, mapChunkSize, mapChunkSize));
+            }
+            else if (drawMode == DrawMode.Mesh)
+            {
+                display.DrawMesh(MeshGenerator.GenerateTerrainMesh(mapData.heightMap, meshHeightMultiplayer, meshHeightCurve, levelOfDetail), TextureGenerator.TextureFromColorMap(mapData.coulorMap, mapChunkSize, mapChunkSize));
+            }
+        }
+
+        MapData GenerateMapData() 
         { 
             float[,] noiseMap = NoiseMapGeneration.GenerateNoiseMap(mapChunkSize, mapChunkSize, seed, noiseScale, octaves, persistance, lacunarity, offset);
 
@@ -51,19 +69,7 @@ namespace MapGeneration
                     colorMap[colorIndex] = terrainType.color;
                 }
             }
-            MapDisplay display = FindObjectOfType<MapDisplay>();
-            if (drawMode == DrawMode.NoiseMap)
-            {
-                display.DrawTexture(TextureGenerator.TextureFromHeightMap(noiseMap));
-            }
-            else if (drawMode == DrawMode.ColorMap)
-            {
-                display.DrawTexture(TextureGenerator.TextureFromColorMap(colorMap, mapChunkSize, mapChunkSize));
-            }
-            else if (drawMode == DrawMode.Mesh)
-            {
-                display.DrawMesh(MeshGenerator.GenerateTerrainMesh(noiseMap, meshHeightMultiplayer,meshHeightCurve,levelOfDetail),TextureGenerator.TextureFromColorMap(colorMap,mapChunkSize,mapChunkSize));
-            }
+            return new MapData(noiseMap,colorMap);
         }
 
         TerrainType ChooseTerrainType(float heigth)
@@ -88,6 +94,17 @@ namespace MapGeneration
                 octaves = 0;
             }
 
+        }
+    }
+    public struct MapData
+    {
+        public float[,] heightMap;
+        public Color[] coulorMap;
+
+        public MapData(float[,] heightMap, Color[] coulorMap )
+        {
+            this.heightMap = heightMap;
+            this.coulorMap = coulorMap;
         }
     }
 }
