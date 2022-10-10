@@ -5,7 +5,7 @@ namespace MapGeneration
 {
     public class EndlessTerrain : MonoBehaviour
     {
-        public const float maxViewDst = 300;
+        public const float maxViewDst = 450;
         public Transform viewer;
 
         public static Vector2 viwerPosition;
@@ -55,7 +55,7 @@ namespace MapGeneration
                     }
                     else
                     {
-                        terrainChunkDiccionary.Add(viewedChunkCoord, new TerrainChunk(viewedChunkCoord, chunkSize));
+                        terrainChunkDiccionary.Add(viewedChunkCoord, new TerrainChunk(viewedChunkCoord, chunkSize,transform));
                     }
                 }
             }
@@ -65,7 +65,7 @@ namespace MapGeneration
             GameObject meshObject;
             Vector2 position;
             Bounds bounds;
-            public TerrainChunk(Vector2 coord, int size)
+            public TerrainChunk(Vector2 coord, int size, Transform parent)
             {
                 position = coord * size;
                 bounds = new Bounds(position,Vector2.one * size);
@@ -74,6 +74,7 @@ namespace MapGeneration
                 meshObject = GameObject.CreatePrimitive(PrimitiveType.Plane);
                 meshObject.transform.position = positionV3;
                 meshObject.transform.localScale = Vector3.one * size / 10f;
+                meshObject.transform.parent = parent;
                 SetVisible(false);
             }
             public void UpdateTerrainChunk()
