@@ -38,8 +38,8 @@ namespace MapGeneration
 
                     for (int i = 0; i < octaves; i++)
                     { 
-                        float sampleX = (xIndex-halfWidth) / scale * frequency + octaveOffsets[i].x;
-                        float sampleY = (yIndex- halfHeight) / scale * frequency + octaveOffsets[i].y; 
+                        float sampleX = (xIndex-halfWidth + octaveOffsets[i].x) / scale * frequency ;
+                        float sampleY = (yIndex- halfHeight + octaveOffsets[i].y) / scale * frequency ; 
 
                         float noise = Mathf.PerlinNoise(sampleX, sampleY) * 2 -1;
                         noiseHeight += noise * amplitude;
